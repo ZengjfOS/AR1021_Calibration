@@ -81,11 +81,14 @@
 * add shell code in `/system/etc/ar102x_Calibration.sh`
   ```Shell
     #!/system/bin/sh
+
+    ar1020_path="/sys/kernel/ar1020"
+    ar1021_path="/sys/kernel/ar1021"
     
-    if [ -d /sys/kernel/ar1020 ]; then
-        ar102x_path=/sys/kernel/ar1020
-    elif [ -d /sys/kernel/ar1021 ]; then
-        ar102x_path=/sys/kernel/ar1021
+    if [ -d $ar1020_path ]; then
+        ar102x_path=$ar1020_path
+    elif [ -d $ar1021_path ]; then
+        ar102x_path=$ar1021_path
     else 
         exit -1
     fi
