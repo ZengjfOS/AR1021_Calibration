@@ -505,6 +505,14 @@ public class Calibration extends Activity {
         editor.putInt("invertX",  calibrationData.getInvertX());         
         editor.putInt("invertY",  calibrationData.getInvertY());         
         editor.commit();
+
+        Log.v("MCHP","minX: "+Integer.toString(calibrationData.getMinX()));
+        Log.v("MCHP","minY: "+Integer.toString(calibrationData.getMinY()));
+        Log.v("MCHP","maxX: "+Integer.toString(calibrationData.getMaxX()));
+        Log.v("MCHP","maxY: "+Integer.toString(calibrationData.getMaxY()));
+        Log.v("MCHP","swapAxes: "+Integer.toString(calibrationData.getSwapAxes()));
+        Log.v("MCHP","invertX: "+Integer.toString(calibrationData.getInvertX()));
+        Log.v("MCHP","invertY: "+Integer.toString(calibrationData.getInvertY()));
         
         // apply calibration data
         writeKernelValue("minX",Integer.toString(calibrationData.getMinX()));        
