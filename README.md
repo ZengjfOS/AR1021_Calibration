@@ -56,7 +56,7 @@
         ...
     }
   ```
-* Calibration values output in logcat
+* Calibration values output in logcat, This is 7" panel.
   ```
     ...
     V/MCHP    ( 1793): minX: 426
@@ -68,7 +68,7 @@
     V/MCHP    ( 1793): invertY: 0
     ...
   ```
-* add script at i.MX6 android boot file: `device/fsl/sabresd_6dq/init.rc`
+* add start script at i.MX6 android boot file: `device/fsl/sabresd_6dq/init.rc`
   ```
     ...
     chmod 0777 system/etc/ar102x_Calibration.sh
@@ -78,7 +78,7 @@
         oneshot
     ...
   ```
-* add shell code in `/system/etc/ar102x_Calibration.sh`
+* add shell code in `device/fsl/sabresd_6dq/ar102x_Calibration.sh`, will copy to `/system/etc/ar102x_Calibration.sh` when build Android source code.
   ```Shell
     #!/system/bin/sh
 
@@ -108,7 +108,7 @@
         fi
     fi 
   ```
-* Make auto copy: `device/fsl/imx6/sabresd_6dq.mk`
+* Make auto copy when building Android source code: `device/fsl/imx6/sabresd_6dq.mk`
   ```
     ...
     PRODUCT_COPY_FILES += \
