@@ -71,7 +71,7 @@
 * add start script at i.MX6 android boot file: `device/fsl/sabresd_6dq/init.rc`
   ```
     ...
-    chmod 0777 system/etc/ar102x_Calibration.sh
+    chmod 0777 /system/etc/ar102x_Calibration.sh
     ...
     service ar102x_Cali /system/etc/ar102x_Calibration.sh
         class late_start
